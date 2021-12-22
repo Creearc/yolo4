@@ -48,11 +48,13 @@ class Dataset(object):
 
 
     def load_annotations(self, dataset_type):
+        print('a', 1)
         final_annotations = []
         with open(self.annot_path, 'r') as f:
             txt = f.read().splitlines()
             annotations = [line.strip() for line in txt if len(line.strip().split()[1:]) != 0]
         np.random.shuffle(annotations)
+        print('a', 2)
 
         # for annotation in annotations:
         #     image_extension = '.jpg'
@@ -70,6 +72,7 @@ class Dataset(object):
         for annotation in annotations:
             # fully parse annotations
             line = annotation.split()
+            print(line)
             image_path, index = "", 1
             for i, one_line in enumerate(line):
                 if not one_line.replace(",","").isnumeric():
