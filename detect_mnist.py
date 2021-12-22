@@ -28,6 +28,7 @@ while True:
 
     yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
     #yolo.load_weights(f"./checkpoints/{TRAIN_MODEL_NAME}") # use keras weights
-    yolo.load_weights(f"./checkpoints/checkpoint")
+    yolo.load_weights(f"./checkpoints/yolov4_custom_Tiny")
 
-    detect_image(yolo, image_path, "mnist_test.jpg", input_size=YOLO_INPUT_SIZE, show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
+    detect_image(yolo, image_path, "mnist_test.jpg", input_size=YOLO_INPUT_SIZE,
+                 show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
