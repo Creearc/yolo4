@@ -41,8 +41,11 @@ def main():
     if os.path.exists(TRAIN_LOGDIR): shutil.rmtree(TRAIN_LOGDIR)
     writer = tf.summary.create_file_writer(TRAIN_LOGDIR)
 
+    print('Dataset preparation')
     trainset = Dataset('train')
+    print('Dataset train - ready')
     testset = Dataset('test')
+    print('Dataset test - ready')
 
     steps_per_epoch = len(trainset)
     global_steps = tf.Variable(1, trainable=False, dtype=tf.int64)
