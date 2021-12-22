@@ -19,6 +19,8 @@ from yolov3.yolov4 import Create_Yolo
 from yolov3.utils import detect_image
 from yolov3.configs import *
 
+video_path = '/home/alexandr/tests/WhatsApp Video 2021-11-12 at 15.29.20.mp4'
+
 while True:
     ID = random.randint(0, 200)
     label_txt = "mnist/mnist_test.txt"
