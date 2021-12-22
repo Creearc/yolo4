@@ -72,7 +72,7 @@ class Dataset(object):
         for annotation in annotations:
             # fully parse annotations
             line = annotation.split()
-            print(line)
+            #print(line)
             image_path, index = "", 1
             for i, one_line in enumerate(line):
                 if not one_line.replace(",","").isnumeric():
