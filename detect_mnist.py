@@ -32,6 +32,9 @@ while True:
     print(1)
     break
 
-    detect_image(yolo, image_path, "mnist_test.jpg", input_size=YOLO_INPUT_SIZE,
-                 show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
+##    detect_image(yolo, image_path, "mnist_test.jpg", input_size=YOLO_INPUT_SIZE,
+##                 show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
+    detect_video(yolo, video_path, './IMAGES/detected.mp4', input_size=YOLO_INPUT_SIZE,
+                 show=False, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
+
     
