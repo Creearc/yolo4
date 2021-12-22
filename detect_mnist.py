@@ -21,22 +21,14 @@ from yolov3.configs import *
 
 video_path = '/home/alexandr/tests/WhatsApp Video 2021-11-12 at 15.29.20.mp4'
 
-while True:
-    ID = random.randint(0, 200)
-    label_txt = "mnist/mnist_test.txt"
-    image_info = open(label_txt).readlines()[ID].split()
 
-    image_path = image_info[0]
-
-    yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
-    #yolo.load_weights(f"./checkpoints/{TRAIN_MODEL_NAME}") # use keras weights
-    yolo.load_weights(f"./checkpoints/yolov4_custom_Tiny")
-    print(1)
-    break
+yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
+#yolo.load_weights(f"./checkpoints/{TRAIN_MODEL_NAME}") # use keras weights
+yolo.load_weights(f"./checkpoints/yolov4_custom_Tiny")
 
 ##    detect_image(yolo, image_path, "mnist_test.jpg", input_size=YOLO_INPUT_SIZE,
 ##                 show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
-    detect_video(yolo, video_path, './IMAGES/detected.mp4', input_size=YOLO_INPUT_SIZE,
-                 show=False, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
+detect_video(yolo, video_path, './IMAGES/detected.mp4', input_size=YOLO_INPUT_SIZE,
+             show=False, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
 
     
