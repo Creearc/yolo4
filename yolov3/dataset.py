@@ -22,10 +22,12 @@ from yolov3.configs import *
 class Dataset(object):
     # Dataset preprocess implementation
     def __init__(self, dataset_type, TEST_INPUT_SIZE=TEST_INPUT_SIZE):
+        print(1)
         self.annot_path  = TRAIN_ANNOT_PATH if dataset_type == 'train' else TEST_ANNOT_PATH
         self.input_sizes = TRAIN_INPUT_SIZE if dataset_type == 'train' else TEST_INPUT_SIZE
         self.batch_size  = TRAIN_BATCH_SIZE if dataset_type == 'train' else TEST_BATCH_SIZE
         self.data_aug    = TRAIN_DATA_AUG   if dataset_type == 'train' else TEST_DATA_AUG
+        print(2)
 
         self.train_yolo_tiny = TRAIN_YOLO_TINY
         self.train_input_sizes = TRAIN_INPUT_SIZE
@@ -35,11 +37,13 @@ class Dataset(object):
         self.anchors = (np.array(YOLO_ANCHORS).T/self.strides).T
         self.anchor_per_scale = YOLO_ANCHOR_PER_SCALE
         self.max_bbox_per_scale = YOLO_MAX_BBOX_PER_SCALE
+        print(3)
 
         self.annotations = self.load_annotations(dataset_type)
         self.num_samples = len(self.annotations)
         self.num_batchs = int(np.ceil(self.num_samples / self.batch_size))
         self.batch_count = 0
+        print(4)
 
 
     def load_annotations(self, dataset_type):
