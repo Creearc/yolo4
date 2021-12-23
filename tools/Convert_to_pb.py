@@ -35,6 +35,7 @@ else:
     yolo.load_weights(YOLO_CUSTOM_WEIGHTS) # use custom weights
 
 yolo.summary()
-yolo.save(f'./checkpoints/{YOLO_TYPE}-{YOLO_INPUT_SIZE}')
+#yolo.save(f'./checkpoints/{YOLO_TYPE}-{YOLO_INPUT_SIZE}')
+yolo.save(f'./checkpoints_3/yolov4_custom_Tiny')
 
 print(f"model saves to /checkpoints/{YOLO_TYPE}-{YOLO_INPUT_SIZE}")
