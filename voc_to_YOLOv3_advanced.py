@@ -6,7 +6,7 @@ import numpy as np
 ap = argparse.ArgumentParser()
 ap.add_argument("-T", "--train_path", type=str, default='dataset/train/')
 ap.add_argument("-V", "--test_path", type=str)
-ap.add_argument("-P", "--test_part", type=float, default=0.2)
+ap.add_argument("-P", "--test_part", type=float)
 ap.add_argument("-N", "--name", type=str, default='dataset')
 ap.add_argument("-O", "--output_path", type=str)
 args = vars(ap.parse_args())
@@ -60,7 +60,7 @@ def test(fullname, output_file):
 
 
 for CLASS in classes:
-    if test_path is None:
+    if args['test_part'] is None:
         for filename in os.listdir(CLASS):
             if not filename.endswith('.xml'):
                 continue
@@ -82,7 +82,7 @@ for CLASS in classes:
         for filename in test_files:
             if not filename.endswith('.xml'):
                 continue
-            fullname = '{}{}/{}'.format(test_path, CLASS.split('/')[-1], filename)
+            fullname = '{}{}/{}'.format(train_path, CLASS.split('/')[-1], filename)
             test(fullname, test_file)
 
         
