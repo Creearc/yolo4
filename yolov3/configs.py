@@ -41,17 +41,17 @@ TRAIN_CLASSES               = "/home/alexandr/tmp/bottles_1/LumDetector_classes.
 TRAIN_ANNOT_PATH            = "/home/alexandr/tmp/bottles_1/LumDetector.txt"
 TRAIN_LOGDIR                = "log"
 TRAIN_CHECKPOINTS_FOLDER    = "checkpoints"
-TRAIN_MODEL_NAME            = f"{YOLO_TYPE}_custom"
+TRAIN_MODEL_NAME            = f"yolov4_custom_Tiny"
 TRAIN_LOAD_IMAGES_TO_RAM    = not True # With True faster training, but need more RAM
 TRAIN_BATCH_SIZE            = 32
 TRAIN_INPUT_SIZE            = 416
 TRAIN_DATA_AUG              = True
 TRAIN_TRANSFER              = True
-TRAIN_FROM_CHECKPOINT       = False # "checkpoints/yolov3_custom"
+TRAIN_FROM_CHECKPOINT       = not False # "checkpoints/yolov3_custom"
 TRAIN_LR_INIT               = 1e-4
-TRAIN_LR_END                = 1e-6
+TRAIN_LR_END                = 1e-10
 TRAIN_WARMUP_EPOCHS         = 2
-TRAIN_EPOCHS                = 100
+TRAIN_EPOCHS                = 20
 
 # TEST options
 TEST_ANNOT_PATH             = "/home/alexandr/tmp/bottles_1/LumDetector.txt"
@@ -59,8 +59,8 @@ TEST_BATCH_SIZE             = 32
 TEST_INPUT_SIZE             = 416
 TEST_DATA_AUG               = False
 TEST_DECTECTED_IMAGE_PATH   = ""
-TEST_SCORE_THRESHOLD        = 0.3
-TEST_IOU_THRESHOLD          = 0.45
+TEST_SCORE_THRESHOLD        = 0.7
+TEST_IOU_THRESHOLD          = 0.65
 
 if TRAIN_YOLO_TINY:
     YOLO_STRIDES            = [16, 32]    
