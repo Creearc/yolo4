@@ -48,8 +48,8 @@ TRAIN_INPUT_SIZE            = 416
 TRAIN_DATA_AUG              = True
 TRAIN_TRANSFER              = True
 TRAIN_FROM_CHECKPOINT       = not False # "checkpoints/yolov3_custom"
-TRAIN_LR_INIT               = 1e-2
-TRAIN_LR_END                = 1e-10
+TRAIN_LR_INIT               = 1e-4
+TRAIN_LR_END                = 1e-6
 TRAIN_WARMUP_EPOCHS         = 2
 TRAIN_EPOCHS                = 20
 
