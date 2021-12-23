@@ -23,6 +23,9 @@ train_path = check_path(args['train_path'])
 test_path = None if args['test_path'] is None else check_path(args['test_path'])
 output_path = '' if args['output_path'] is None else check_path(args['output_path'])
 
+if output_path != '':
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
 
 train_file = '{}{}_train.txt'.format(output_path, args['name'])
 test_file = '{}{}_test.txt'.format(output_path, args['name'])
