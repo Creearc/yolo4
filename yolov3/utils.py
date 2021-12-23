@@ -492,7 +492,7 @@ def detect_video(Yolo, video_path, output_path, input_size=416, show=False, CLAS
         image = cv2.putText(image, "Time: {:.1f}FPS".format(fps), (0, 30), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 255), 2)
         # CreateXMLfile("XML_Detections", str(int(time.time())), original_image, bboxes, read_class_names(CLASSES))
         
-        print("Time: {:.2f}ms, Detection FPS: {:.1f}, total FPS: {:.1f}".format(ms, fps, fps2))
+        
         if output_path != '': out.write(image)
         if show:
             cv2.imshow('output', image)
@@ -501,6 +501,7 @@ def detect_video(Yolo, video_path, output_path, input_size=416, show=False, CLAS
                 break
 
     cv2.destroyAllWindows()
+    print("Time: {:.2f}ms, Detection FPS: {:.1f}, total FPS: {:.1f}".format(ms, fps, fps2))
 
 # detect from webcam
 def detect_realtime(Yolo, output_path, input_size=416, show=False, CLASSES=YOLO_COCO_CLASSES, score_threshold=0.3, iou_threshold=0.45, rectangle_colors=''):
