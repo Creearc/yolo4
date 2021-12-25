@@ -26,8 +26,7 @@ files = ['WhatsApp Video 2021-11-12 at 15.29.20.mp4',
          'WhatsApp Video 2021-11-12 at 15.29.51.mp4',
          ]
 
-files = ['WhatsApp Video 2021-12-24 at 18.22.37.mp4',
-         'WhatsApp Video 2021-12-24 at 18.23.53.mp4']
+files = ['1.mp4']
 
 
 yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
