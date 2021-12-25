@@ -26,9 +26,13 @@ files = ['WhatsApp Video 2021-11-12 at 15.29.20.mp4',
          'WhatsApp Video 2021-11-12 at 15.29.51.mp4',
          ]
 
+files = ['WhatsApp Video 2021-12-24 at 18.22.37.mp4',
+         'WhatsApp Video 2021-12-24 at 18.23.53.mp4']
+
+
 yolo = Create_Yolo(input_size=YOLO_INPUT_SIZE, CLASSES=TRAIN_CLASSES)
 #yolo.load_weights(f"./checkpoints/{TRAIN_MODEL_NAME}") # use keras weights
-yolo.load_weights(f"./checkpoints/yolov4_custom_Tiny")
+yolo.load_weights(f"./checkpoints_5/yolov4_custom_Tiny")
 
 for i in range(len(files)):
     print(files[i])
