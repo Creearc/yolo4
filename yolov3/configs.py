@@ -37,8 +37,8 @@ if YOLO_TYPE                == "yolov3":
 TRAIN_YOLO_TINY             = not False
 TRAIN_SAVE_BEST_ONLY        = True # saves only best model according validation loss (True recommended)
 TRAIN_SAVE_CHECKPOINT       = False # saves all best validated checkpoints in training process (may require a lot disk space) (False recommended)
-TRAIN_CLASSES               = "/home/alexandr/Codenrock-New-Year-ML-Battle/dataset/classes.txt"
-TRAIN_ANNOT_PATH            = "/home/alexandr/Codenrock-New-Year-ML-Battle/dataset/ded_train.txt"
+TRAIN_CLASSES               = "/home/alexandr/tmp/rebroskleyka_1/dataset_classes.txt"
+TRAIN_ANNOT_PATH            = "/home/alexandr/tmp/rebroskleyka_1/dataset_train.txt"
 TRAIN_LOGDIR                = "log"
 TRAIN_CHECKPOINTS_FOLDER    = "checkpoints"
 TRAIN_MODEL_NAME            = f"yolov4_custom"
@@ -51,10 +51,10 @@ TRAIN_FROM_CHECKPOINT       = False # "checkpoints/yolov3_custom"
 TRAIN_LR_INIT               = 1e-4
 TRAIN_LR_END                = 1e-6
 TRAIN_WARMUP_EPOCHS         = 2
-TRAIN_EPOCHS                = 5
+TRAIN_EPOCHS                = 15
 
 # TEST options
-TEST_ANNOT_PATH             = "/home/alexandr/Codenrock-New-Year-ML-Battle/dataset/ded_train.txt"
+TEST_ANNOT_PATH             = "/home/alexandr/tmp/rebroskleyka_1/dataset_test.txt"
 TEST_BATCH_SIZE             = 32
 TEST_INPUT_SIZE             = 416
 TEST_DATA_AUG               = False
