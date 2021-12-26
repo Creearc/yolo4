@@ -11,8 +11,6 @@ ap.add_argument("-N", "--name", type=str, default='dataset')
 ap.add_argument("-O", "--output_path", type=str)
 args = vars(ap.parse_args())
 
-print(args['test_path'])
-
 check_path = lambda x : x if x[-1] == '/' else '{}/'.format(x)
 
 def clear_file(file):
