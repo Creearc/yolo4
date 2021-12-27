@@ -54,3 +54,14 @@ wget -P model_data https://github.com/AlexeyAB/darknet/releases/download/darknet
 python3 mnist/make_data.py
 sudo nano yolov3/configs.py
 python3 train.py
+
+
+
+
+
+
+
+
+
+
+
