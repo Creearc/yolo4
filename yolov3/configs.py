@@ -21,7 +21,7 @@ YOLO_CUSTOM_WEIGHTS         = False # "checkpoints/yolov3_custom" # used in eval
                             # YOLO_CUSTOM_WEIGHTS also used with TensorRT and custom model detection
 YOLO_COCO_CLASSES           = "model_data/coco/coco.names"
 YOLO_STRIDES                = [8, 16, 32]
-YOLO_IOU_LOSS_THRESH        = 0.99
+YOLO_IOU_LOSS_THRESH        = 0.99 # 0.99
 YOLO_ANCHOR_PER_SCALE       = 3
 YOLO_MAX_BBOX_PER_SCALE     = 100
 YOLO_INPUT_SIZE             = 416
@@ -47,11 +47,11 @@ TRAIN_BATCH_SIZE            = 32
 TRAIN_INPUT_SIZE            = 416
 TRAIN_DATA_AUG              = True
 TRAIN_TRANSFER              = True
-TRAIN_FROM_CHECKPOINT       = False # "checkpoints/yolov3_custom"
+TRAIN_FROM_CHECKPOINT       = not False # "checkpoints/yolov3_custom"
 TRAIN_LR_INIT               = 1e-4
 TRAIN_LR_END                = 1e-6
 TRAIN_WARMUP_EPOCHS         = 2
-TRAIN_EPOCHS                = 20
+TRAIN_EPOCHS                = 200
 
 # TEST options
 TEST_ANNOT_PATH             = "/home/alexandr/tmp/rebroskleyka_1/dataset_test.txt"
@@ -59,8 +59,8 @@ TEST_BATCH_SIZE             = 32
 TEST_INPUT_SIZE             = 416
 TEST_DATA_AUG               = False
 TEST_DECTECTED_IMAGE_PATH   = ""
-TEST_SCORE_THRESHOLD        = 0.7
-TEST_IOU_THRESHOLD          = 0.8 # used for mAP in the end
+TEST_SCORE_THRESHOLD        = 0.9 # 0.7
+TEST_IOU_THRESHOLD          = 0.8 # used for mAP in the end 0.8
 
 if TRAIN_YOLO_TINY:
     YOLO_STRIDES            = [16, 32]    
