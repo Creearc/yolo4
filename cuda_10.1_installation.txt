@@ -1,6 +1,12 @@
 sudo apt --purge remove nvidia-*
 sudo apt --purge remove cuda-*
 
+sudo apt install -y dkms git
+git clone https://github.com/tomaspinho/rtl8821ce.git
+cd rtl8821ce
+sudo ./dkms-install.sh
+sudo modprobe 8821ce
+
 
 sudo apt update && sudo apt upgrade -y
 # ubuntu-drivers devices
@@ -14,16 +20,12 @@ sudo apt-key add /var/cuda-repo-10-1-local-10.1.105-418.39/7fa2af80.pub
 sudo apt-get update
 
 sudo apt-get install cuda-toolkit-10.1
-sudo nano .bashrc
+sudo nano ~/.bashrc
 
 # NVIDIA CUDA Toolkit
 export PATH=/usr/local/cuda-10.1/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64
 
-###
-export PATH="/usr/local/cuda/bin:$PATH" 
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
-###
 
 source ~/.bashrc
 
@@ -34,6 +36,7 @@ sudo dpkg -i libcudnn7-dev_7.6.5.32-1+cuda10.1_amd64.deb
 sudo dpkg -i libcudnn7-doc_7.6.5.32-1+cuda10.1_amd64.deb
 
 nvcc -V
+nvidia-smi
 sudo reboot
 
 
@@ -42,3 +45,12 @@ python3 -m pip install lxml
 python3 -m pip install --upgrade pip
 git clone https://github.com/Creearc/yolo4
 sudo python3 -m pip install -r ./requirements.txt
+
+
+git clone https://github.com/pythonlessons/TensorFlow-2.x-YOLOv3
+cd TensorFlow-2.x-YOLOv3/
+sudo python3 -m pip install -r ./requirements.txt
+wget -P model_data https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights
+python3 mnist/make_data.py
+sudo nano yolov3/configs.py
+python3 train.py
