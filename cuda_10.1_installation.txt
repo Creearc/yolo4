@@ -55,6 +55,12 @@ python3 mnist/make_data.py
 sudo nano yolov3/configs.py
 python3 train.py
 
+####################################################################################################
+if error "CUDA runtime implicit initialization on GPU:0 failed. Status: device kernel image is invalid", then^
+pip install tensorflow-gpu==2.2
+####################################################################################################
+
+
 screen -dmS nn -L -Logfile ~/logfile_1.txt python3 train.py
 screen -dmS nn -L -Logfile ~/logfile_1.txt 
 
